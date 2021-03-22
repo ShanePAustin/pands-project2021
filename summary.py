@@ -15,6 +15,4 @@ count = content["Flower"].value_counts()
 #create Summary.txt
 with open("Summary.txt", "w") as f:
     
-    f.write(str(summary))
-    f.write('\n\n')
-    f.write(str(count))
+    f.write(str(summary)+('\n\n')+(str(count)))
