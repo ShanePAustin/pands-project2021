@@ -1,3 +1,8 @@
+#summary.py
+#A test program that calls in the dataset and creates a summary of the data as a text file
+#Author: Shane Austin
+
+
 import csv
 import pandas as pd
 
