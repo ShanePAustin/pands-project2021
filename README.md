@@ -2,10 +2,7 @@
 
 Test Commit
 
-<<<<<<< HEAD
-Data Download - http://archive.ics.uci.edu/ml/machine-learning-databases/iris/
-=======
-##References
+## References
 
 1) https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5
 
@@ -20,4 +17,4 @@ Data Download - http://archive.ics.uci.edu/ml/machine-learning-databases/iris/
 6) https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
 
 7) https://www.researchgate.net/publication/344196553_Machine-learning_analysis_for_the_Iris_dataset
->>>>>>> f520706159979f7736d4e532b0faea1494300a1f
+
