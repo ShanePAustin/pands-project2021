@@ -14,6 +14,6 @@ Test Commit
 
 5) https://rpubs.com/AjinkyaUC/Iris_DataSet
 
-6)https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
+6) https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
 
-7)https://www.researchgate.net/publication/344196553_Machine-learning_analysis_for_the_Iris_dataset
+7) https://www.researchgate.net/publication/344196553_Machine-learning_analysis_for_the_Iris_dataset
