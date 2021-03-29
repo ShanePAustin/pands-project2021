@@ -73,9 +73,9 @@ with open("Summary.txt", "w") as f:
 ```
 
 ```
-Iris-versicolor    50
-Iris-setosa        50
-Iris-virginica     50
+Iris-versicolor    50  
+Iris-setosa        50  
+Iris-virginica     50  
 Name: Flower, dtype: int64
 ```
 
