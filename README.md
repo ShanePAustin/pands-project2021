@@ -24,12 +24,9 @@ The Iris flower dataset was introduced by the British statistician and biologist
 
 The data set consists of 50 samples from three species of Iris:
 
-
-1. Iris Setosa ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_setosa.jpg "Iris Setosa")
-
-2. Iris Versicolor ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_versicolor.jpg "Iris Versicolor")
-
-3. Iris Virhinica ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_virginica.jpg "Iris Virginica")
+|Iris Setosa|Iris Versicolor|Iris Virginica|
+|-----------|---------------|--------------|
+|![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_setosa.jpg "Iris Setosa")|![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_versicolor.jpg "Iris Versicolor")|![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_virginica.jpg "Iris Virginica")|
 
 ## References
 
