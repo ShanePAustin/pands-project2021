@@ -10,14 +10,19 @@ import pandas as pd
 filename = "./data/iris.csv"
 
 #reading in data and assigning column values
-content = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Flower"])
+content = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Species"])
 
 #summary production using describe()
 summary = content.describe()
 #count the occurances of each flower type
-count = content["Flower"].value_counts()
+count = content["Species"].value_counts()
+#output the first 5 lines of data per species of flower
+head = content.groupby("Species").head(5)
+#output the correlation of the 4 attributes
+correlation = content.corr()
 
 #create Summary.txt
 with open("Summary.txt", "w") as f:
     
-    f.write(str(summary)+('\n\n')+(str(count)))
+    f.write(str(summary)+('\n\n')+(str(count)+('\n\n')+(str(head)+('\n\n')+(str(correlation)))))
+
