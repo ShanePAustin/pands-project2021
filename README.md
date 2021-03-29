@@ -30,7 +30,7 @@ The four variables that were measured for each flower species are shown below:
 4. Petal Width (cm)
 
 
-The data set consists of 50 samples from three species of Iris:
+The data set consists of 50 samples from each three species of Iris:
 
 |Iris Setosa|Iris Versicolor|Iris Virginica|
 |-----------|---------------|--------------|
@@ -41,6 +41,42 @@ The data set consists of 50 samples from three species of Iris:
 
 The image below shows the first ten lines of the dataset:
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/First10.png "First 10")
+
+### Data Summary
+
+``` python
+import csv
+import pandas as pd
+
+filename = "./data/iris.csv"
+
+content = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Flower"])
+
+summary = content.describe()
+count = content["Flower"].value_counts()
+
+with open("Summary.txt", "w") as f:
+    
+    f.write(str(summary)+('\n\n')+(str(count)))
+
+```
+       Sepal Length  Sepal Width  Petal Length  Petal Width
+count    150.000000   150.000000    150.000000   150.000000
+mean       5.843333     3.054000      3.758667     1.198667
+std        0.828066     0.433594      1.764420     0.763161
+min        4.300000     2.000000      1.000000     0.100000
+25%        5.100000     2.800000      1.600000     0.300000
+50%        5.800000     3.000000      4.350000     1.300000
+75%        6.400000     3.300000      5.100000     1.800000
+max        7.900000     4.400000      6.900000     2.500000
+```
+
+```
+Iris-versicolor    50
+Iris-setosa        50
+Iris-virginica     50
+Name: Flower, dtype: int64
+```
 
 ## References
 
