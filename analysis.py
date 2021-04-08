@@ -42,9 +42,34 @@ with open("Summary.txt", "w") as f:
 '''
 ###############################################################################################################################
 
+sepallengthhist, axes = plt.subplots(figsize=(10,8))
+df["Sepal Length"].plot(kind='hist',color='firebrick')
+plt.xlabel("Sepal Length")
+plt.grid(linestyle = "dashed")
+plt.show()
+
+sepalwidthhist, axes = plt.subplots(figsize=(10,8))
+df["Sepal Width"].plot(kind='hist',color='royalblue')
+plt.xlabel("Sepal Width")
+plt.grid(linestyle = "dashed")
+plt.show()
+
+petallengthhist, axes = plt.subplots(figsize=(10,8))
+df["Petal Length"].plot(kind='hist',color='forestgreen')
+plt.xlabel("Petal Length")
+plt.grid(linestyle = "dashed")
+plt.show()
+
+petallengthhist, axes = plt.subplots(figsize=(10,8))
+df["Petal Width"].plot(kind='hist',color='violet')
+plt.xlabel("Petal Width")
+plt.grid(linestyle = "dashed")
+plt.show()
+
 Histogram, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
 sns.histplot( df["Sepal Length"] , color="firebrick", ax=axes[0, 0])
 sns.histplot( df["Sepal Width"] , color="royalblue",ax=axes[0, 1]) 
 sns.histplot( df["Petal Length"] , color="forestgreen", ax=axes[1, 0]) 
 sns.histplot( df["Petal Width"] , color="violet", ax=axes[1, 1])
-plt.show()
+#plt.show()
+
