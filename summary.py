@@ -12,8 +12,11 @@ filename = "./data/iris.csv"
 #reading in data and assigning column values
 df = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Species"])
 
+###############################################################################################################################
+#Data summary.txt
 #summary production using describe()
 summary = df.describe()
+#Summary per flower type
 sumSeto = df.loc[0:49].describe()
 sumVers = df.loc[50:99].describe()
 sumVirg = df.loc[100:49].describe()
@@ -35,5 +38,5 @@ with open("Summary.txt", "w") as f:
     f.write(("Data Head per Species\n\n")+(str(head)+('\n\n')))
     f.write(("Data Correlation\n\n")+(str(correlation)))
 
-
+###############################################################################################################################
 
