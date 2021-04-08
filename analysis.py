@@ -2,9 +2,11 @@
 #A program for the Analysis of the Iris Data Set
 #Author: Shane Austin
 
-
 import csv
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
 
 #import the csv
 filename = "./data/iris.csv"
@@ -39,3 +41,10 @@ with open("Summary.txt", "w") as f:
     f.write(("Data Correlation\n\n")+(str(correlation)))
 '''
 ###############################################################################################################################
+
+Histogram, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
+sns.histplot( df["Sepal Length"] , color="firebrick", ax=axes[0, 0])
+sns.histplot( df["Sepal Width"] , color="royalblue",ax=axes[0, 1]) 
+sns.histplot( df["Petal Length"] , color="forestgreen", ax=axes[1, 0]) 
+sns.histplot( df["Petal Width"] , color="violet", ax=axes[1, 1])
+plt.show()
