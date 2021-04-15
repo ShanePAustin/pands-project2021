@@ -17,18 +17,18 @@ df = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width"
 ###############################################################################################################################
 #Data summary.txt
 #summary production using describe()
-summary = df.describe()
+summary = df.describe().round(2)
 #Summary per flower type
-sumSeto = df.loc[0:49].describe()
-sumVers = df.loc[50:99].describe()
-sumVirg = df.loc[100:49].describe()
+sumSeto = df.loc[0:49].describe().round(2)
+sumVers = df.loc[50:99].describe().round(2)
+sumVirg = df.loc[100:149].describe().round(2)
 #count the occurances of each flower type
 count = df["Species"].value_counts()
 #output the first 5 lines of data per species of flower
 head = df.groupby("Species").head(5)
 #output the correlation of the 4 attributes
 correlation = df.corr()
-'''
+
 #create Summary.txt
 with open("Summary.txt", "w") as f:
     
@@ -39,28 +39,29 @@ with open("Summary.txt", "w") as f:
     f.write(("Species Count\n\n")+(str(count)+('\n\n')))
     f.write(("Data Head per Species\n\n")+(str(head)+('\n\n')))
     f.write(("Data Correlation\n\n")+(str(correlation)))
-'''
-###############################################################################################################################
 
-sepallengthhist, axes = plt.subplots(figsize=(10,8))
+###############################################################################################################################
+'''
+sepalLength, axes = plt.subplots(figsize=(10,8))
 df["Sepal Length"].plot(kind='hist',color='firebrick')
+plt.title("Sepal Length Histogram")
 plt.xlabel("Sepal Length")
 plt.grid(linestyle = "dashed")
 plt.show()
 
-sepalwidthhist, axes = plt.subplots(figsize=(10,8))
+sepalWidth, axes = plt.subplots(figsize=(10,8))
 df["Sepal Width"].plot(kind='hist',color='royalblue')
 plt.xlabel("Sepal Width")
 plt.grid(linestyle = "dashed")
 plt.show()
 
-petallengthhist, axes = plt.subplots(figsize=(10,8))
+petalLength, axes = plt.subplots(figsize=(10,8))
 df["Petal Length"].plot(kind='hist',color='forestgreen')
 plt.xlabel("Petal Length")
 plt.grid(linestyle = "dashed")
 plt.show()
 
-petallengthhist, axes = plt.subplots(figsize=(10,8))
+petalLength, axes = plt.subplots(figsize=(10,8))
 df["Petal Width"].plot(kind='hist',color='violet')
 plt.xlabel("Petal Width")
 plt.grid(linestyle = "dashed")
@@ -80,3 +81,11 @@ sns.distplot( df["Petal Length"] , color="forestgreen", ax=axes[1, 0])
 sns.distplot( df["Petal Width"] , color="violet", ax=axes[1, 1])
 plt.show()
 #plt.savefig("Histogram.png") 
+'''
+
+df.plot(kind='barh', stacked=True)  
+plt.xlabel('in cm')  
+plt.ylabel('Sample of 150 flowers') 
+plt.title('Stacked bar graph of Iris dataset')
+plt.show() 
+

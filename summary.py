@@ -15,11 +15,11 @@ df = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width"
 ###############################################################################################################################
 #Data summary.txt
 #summary production using describe()
-summary = df.describe()
+summary = df.describe().round(2)
 #Summary per flower type
-sumSeto = df.loc[0:49].describe()
-sumVers = df.loc[50:99].describe()
-sumVirg = df.loc[100:49].describe()
+sumSeto = df.loc[0:49].describe().round(2)
+sumVers = df.loc[50:99].describe().round(2)
+sumVirg = df.loc[100:149].describe().round(2)
 #count the occurances of each flower type
 count = df["Species"].value_counts()
 #output the first 5 lines of data per species of flower
