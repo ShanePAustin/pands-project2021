@@ -94,32 +94,11 @@ def histograms():
 ##########################################################################
 #Scatterplots
 def scatterPlots():
-
-    #ax = plt.axes()
-    x = (df["Sepal Length"])
-    y = (df["Sepal Width"])
-
-    plt.scatter(x,y)
-    plt.show()
-
-    x = (df["Petal Length"])
-    y = (df["Petal Width"])
-
-    plt.scatter(x,y)
-    plt.show()
-
-    x = (df["Sepal Length"])
-    y = (df["Petal Length"])
-
-    plt.scatter(x,y)
-    plt.show()
-
-    x = (df["Sepal Width"])
-    y = (df["Petal Width"])
-
-    plt.scatter(x,y)
-    plt.show()
-
+    
+    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Length", "Sepal Width").add_legend()
+    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Petal Length", "Petal Width").add_legend()
+    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Length", "Petal Length").add_legend()
+    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Width", "Petal Width").add_legend()
 
     sns.pairplot(df,hue="Species",height=3)
     plt.show()
@@ -141,5 +120,5 @@ def stack():
 
 #dataSummary()
 #histograms()
-#scatterPlots()
+scatterPlots()
 #distPlot()
