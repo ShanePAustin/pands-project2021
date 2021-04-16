@@ -120,16 +120,16 @@ def stack():
     #plt.show() 
 
 ##########################################################################
+def boxPlots():
+    boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
+    sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0], dodge=False)
+    sns.boxplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[1], dodge=False)
+    sns.boxplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[2], dodge=False)
+    sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[3], dodge=False)
+    plt.show()
 
-boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
-sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0], dodge=False)
-sns.boxplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[1], dodge=False)
-sns.boxplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[2], dodge=False)
-sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[3], dodge=False)
-
-
-plt.show()
 #dataSummary()
 #histograms()
 #scatterPlots()
 #distPlot()
+boxPlots()
