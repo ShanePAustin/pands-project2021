@@ -37,11 +37,11 @@ sumVirg = df.loc[100:149].describe().round(2)
 #output the correlation of the 4 attributes
 correlation = df.corr()
 
-'''
+
 #create Summary.txt
 with open("Summary.txt", "w") as f:
     
-    f.write(("Data Summary"\n\n)
+    f.write(("Data Summary\n\n"))
     
     f.write(("Data Shape\n\n")+(str(shape)+('\n\n')))
     f.write(("Data Count\n\n")+(str(count)+('\n\n')))    
@@ -55,6 +55,6 @@ with open("Summary.txt", "w") as f:
     f.write(("Data Summary (Virginica)\n\n")+(str(sumVirg)+('\n\n')))
 
     f.write(("Data Correlation\n\n")+(str(correlation)))
-'''
+
 ###############################################################################################################################
 

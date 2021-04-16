@@ -95,22 +95,23 @@ def histograms():
 #Scatterplots
 def scatterPlots():
     
-    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Length", "Sepal Width").add_legend()
-    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Petal Length", "Petal Width").add_legend()
+    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
+    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Petal Length", "Petal Width" ).add_legend()
     sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Length", "Petal Length").add_legend()
-    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Width", "Petal Width").add_legend()
+    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Width" , "Petal Width" ).add_legend()
 
     sns.pairplot(df,hue="Species",height=3)
     plt.show()
 
+##########################################################################
 def distPlot():
-    Distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
-    sns.distplot( df["Sepal Length"] , color="firebrick", ax=axes[0, 0])
-    sns.distplot( df["Sepal Width"] , color="royalblue",ax=axes[0, 1]) 
-    sns.distplot( df["Petal Length"] , color="forestgreen", ax=axes[1, 0]) 
-    sns.distplot( df["Petal Width"] , color="violet", ax=axes[1, 1])
+    histplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
+    sns.histplot( df["Sepal Length"] , kde = True, stat="density", linewidth=1, color="firebrick"  , ax=axes[0, 0])
+    sns.histplot( df["Sepal Width" ] , kde = True, stat="density", linewidth=1, color="royalblue"  ,ax=axes[0, 1]) 
+    sns.histplot( df["Petal Length"] , kde = True, stat="density", linewidth=1, color="forestgreen", ax=axes[1, 0]) 
+    sns.histplot( df["Petal Width" ] , kde = True, stat="density", linewidth=1, color="violet"     , ax=axes[1, 1])
     plt.show()
-
+##########################################################################
 def stack():
     df.plot(kind='barh', stacked=True)  
     plt.xlabel('in cm')  
@@ -118,7 +119,17 @@ def stack():
     plt.title('Stacked bar graph of Iris dataset')
     #plt.show() 
 
+##########################################################################
+
+boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
+sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0], dodge=False)
+sns.boxplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[1], dodge=False)
+sns.boxplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[2], dodge=False)
+sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[3], dodge=False)
+
+
+plt.show()
 #dataSummary()
 #histograms()
-scatterPlots()
+#scatterPlots()
 #distPlot()
