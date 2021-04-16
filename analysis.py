@@ -128,8 +128,18 @@ def boxPlots():
     sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[3], dodge=False)
     plt.show()
 
+def violinPlots():
+    violinplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
+    sns.violinplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0,0], dodge=False)
+    sns.violinplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[0,1], dodge=False)
+    sns.violinplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[1,0], dodge=False)
+    sns.violinplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[1,1], dodge=False)
+    plt.show()
+
+
 #dataSummary()
 #histograms()
 #scatterPlots()
 #distPlot()
-boxPlots()
+#boxPlots()
+#violinPlots()
