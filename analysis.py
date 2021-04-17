@@ -65,14 +65,17 @@ def histograms():
     plt.xlabel("Sepal Length")
     plt.grid(linestyle = "dashed", )
     ax.set_facecolor("lightgrey")
+    plt.savefig("./plots/SLHist.png")
     plt.show()
+    
 
     ax = plt.axes()
     plt.hist(df["Sepal Width"], color = "royalblue")
     plt.title("Sepal Width Histogram")
     plt.xlabel("Sepal Width")
     plt.grid(linestyle = "dashed", )
-    ax.set_facecolor("lightgrey")
+    ax.set_facecolor("lightgrey")    
+    plt.savefig("./plots/SWHist.png")
     plt.show()
 
     ax = plt.axes()
@@ -81,7 +84,9 @@ def histograms():
     plt.xlabel("Petal Length")
     plt.grid(linestyle = "dashed", )
     ax.set_facecolor("lightgrey")
+    plt.savefig("./plots/PLHist.png")
     plt.show()
+    
 
     ax = plt.axes()
     plt.hist(df["Petal Width"], color = "violet")
@@ -89,7 +94,9 @@ def histograms():
     plt.xlabel("Petal Width")
     plt.grid(linestyle = "dashed", )
     ax.set_facecolor("lightgrey")
+    plt.savefig("./plots/PWHist.png")
     plt.show()
+    
 
 ##########################################################################
 #Scatterplots
@@ -101,6 +108,7 @@ def scatterPlots():
     sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Width" , "Petal Width" ).add_legend()
 
     sns.pairplot(df,hue="Species",height=3)
+    plt.savefig("./plots/scatterPlot.png")
     plt.show()
 
 ##########################################################################
@@ -110,6 +118,7 @@ def distPlot():
     sns.histplot( df["Sepal Width" ] , kde = True, stat="density", linewidth=1, color="royalblue"  ,ax=axes[0, 1]) 
     sns.histplot( df["Petal Length"] , kde = True, stat="density", linewidth=1, color="forestgreen", ax=axes[1, 0]) 
     sns.histplot( df["Petal Width" ] , kde = True, stat="density", linewidth=1, color="violet"     , ax=axes[1, 1])
+    plt.savefig("./plots/distPlot.png")
     plt.show()
 ##########################################################################
 def stack():
@@ -117,7 +126,8 @@ def stack():
     plt.xlabel('in cm')  
     plt.ylabel('Sample of 150 flowers') 
     plt.title('Stacked bar graph of Iris dataset')
-    #plt.show() 
+    plt.savefig("./plots/stackPlot.png")
+    plt.show() 
 
 ##########################################################################
 def boxPlots():
@@ -126,6 +136,7 @@ def boxPlots():
     sns.boxplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[1], dodge=False)
     sns.boxplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[2], dodge=False)
     sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[3], dodge=False)
+    plt.savefig("./plots/boxPlots.png")
     plt.show()
 
 def violinPlots():
@@ -134,12 +145,20 @@ def violinPlots():
     sns.violinplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[0,1], dodge=False)
     sns.violinplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[1,0], dodge=False)
     sns.violinplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[1,1], dodge=False)
+    plt.savefig("./plots/violinPlots.png")
+    plt.show()
+
+def heatMap():
+    sns.heatmap(df.corr(),cmap="BuPu", annot=True)
+    plt.savefig("./plots/hMap.png")
     plt.show()
 
 
 #dataSummary()
 #histograms()
-#scatterPlots()
-#distPlot()
-#boxPlots()
-#violinPlots()
+scatterPlots()
+distPlot()
+boxPlots()
+violinPlots()
+stack()
+heatMap()
