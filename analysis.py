@@ -103,9 +103,13 @@ def histograms():
 def scatterPlots():
     
     sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
+    plt.savefig("./plots/SLSWscatterPlot.png")
     sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Petal Length", "Petal Width" ).add_legend()
+    plt.savefig("./plots/PLPWscatterPlot.png")
     sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Length", "Petal Length").add_legend()
+    plt.savefig("./plots/SLPLscatterPlot.png")
     sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Width" , "Petal Width" ).add_legend()
+    plt.savefig("./plots/SWPWscatterPlot.png")
 
     sns.pairplot(df,hue="Species",height=3)
     plt.savefig("./plots/scatterPlot.png")
@@ -126,13 +130,14 @@ def stack():
     plt.xlabel('in cm')  
     plt.ylabel('Sample of 150 flowers') 
     plt.title('Stacked bar graph of Iris dataset')
-    plt.savefig("./plots/stackPlot.png")
+    plt.tight_layout()
+    #plt.savefig("./plots/stackPlot.png")
     plt.show() 
 
 ##########################################################################
 def boxPlots():
     boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
-    sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0], dodge=False)
+    sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0], dodge=False)    
     sns.boxplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[1], dodge=False)
     sns.boxplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[2], dodge=False)
     sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[3], dodge=False)
@@ -157,8 +162,8 @@ def heatMap():
 #dataSummary()
 #histograms()
 scatterPlots()
-distPlot()
-boxPlots()
-violinPlots()
-stack()
-heatMap()
+#distPlot()
+#boxPlots()
+#violinPlots()
+#stack()
+#heatMap()
