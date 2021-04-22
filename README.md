@@ -12,11 +12,11 @@
 2. [Introduction](#2-introduction)
     1. [Libraries](#2.1-libraries)
 3. [Data Set](#3-data-set)
-    1. [Data Summary](#3.1-data-summary)
-        1. [Data Integrity](#3.1.1-data-integrity)
-        2. [Data Statistics](#3.1.2-data-statistics)
+    1. [Data Summary](#31-data-summary)
+        1. [Data Integrity](#311-data-integrity)
+        2. [Data Statistics](#312-data-statistics)
 4. [Data Analysis](#4-data-analysis)
-    1. [Histograms](#4.1-histograms)
+    1. [Histograms](#41-histograms)
 4. [References](#references)
 
 ## 1 Problem Statement 
