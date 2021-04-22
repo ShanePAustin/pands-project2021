@@ -8,13 +8,18 @@
 
 ## Table of Contents
 
-1. [Problem Statement](#problem-statement)
-2. [Introduction](#introduction)
-3. [Data Set](#data-set)
-    1. [Data Summary](#data-summary)
+1. [Problem Statement](#1-problem-statement)
+2. [Introduction](#2-introduction)
+    1. [Libraries](#2.1-libraries)
+3. [Data Set](#3-data-set)
+    1. [Data Summary](#3.1-data-summary)
+        1. [Data Integrity](#3.1.1-data-integrity)
+        2. [Data Statistics](#3.1.2-data-statistics)
+4. [Data Analysis](#4-data-analysis)
+    1. [Histograms](#4.1-histograms)
 4. [References](#references)
 
-## Problem Statement 
+## 1 Problem Statement 
 
 *This project concerns the well-known Fisher’s Iris data set. You must research the data set and write documentation and code to investigate it. An online search for information on the data set will convince you that many people have investigated it previously. You are expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed.*
 
@@ -25,7 +30,7 @@
 * outputs a summary of each variable to a single text file 
 * saves a histogram of each variable to png files
 
-## Introduction
+## 2 Introduction
 The Iris flower dataset was introduced by the British statistician and biologist Ronald Fisher in 1936 in his paper (“The Use of Multiple Measurements in Taxonomic Problems”) [3] It focused on how to differentiate Iris species based on the shape and structure of their flowers. The dataset was originally collected by the botanist Edgar Anderson at the Gaspé Peninsula, Canada. Ronald Fisher was regarded by some as the single most important figure in 20th century statistics, and this dataset has since become a typical test case for many statistical classification techniques in the areas of statistics and machine learning.
 
 The data set consists of 50 samples from each three species of Iris:
@@ -34,8 +39,10 @@ The data set consists of 50 samples from each three species of Iris:
 |-----------|---------------|--------------|
 |![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_setosa.jpg "Iris Setosa")|![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_versicolor.jpg "Iris Versicolor")|![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_virginica.jpg "Iris Virginica")|
 
+### 2.1 Libraries
 
-## Data Set
+
+## 3 Data Set
 
 The data was found and downloaded form the UC Irvine Machine Learning Repository [4], it contains 4 attributes and 150 instances, split into 3 seperate classes (Iris species) of 50 each. A sample of the raw data is shown below:
 
@@ -59,7 +66,7 @@ The four variables that were measured for each flower species are shown below:
 4. Petal Width (cm)
 
 
-### Data Summary
+### 3.1 Data Summary
 
 The data was imported into the program and the column names were defined:
 
@@ -69,7 +76,7 @@ filename = "./data/iris.csv"
 df = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Species"])
 ```
 
-#### Data Integrity
+#### 3.1.1 Data Integrity
 
 With the data imported a summary was performed to assess the data integrity and discern the overall structure. To test data integrity three tests were performed to check for missing fields and data consistency. The tests performed were: 
 
@@ -139,11 +146,11 @@ Data Head per Species
 104           6.5          3.0           5.8          2.2   Iris-virginica
 ```
 
-#### Data Statistics
+#### 3.1.2 Data Statistics
 
 Once the integrity of the data has been established, a surface level statistical analysis can be performed using the Python function "describe()". Ths shows the count, mean, standard deviation, min, max and the quartile points of the sorted data. The code and result of this (rounded to 2 decimal places) is shown below:
 
-```
+```python
 summary = df.describe().round(2)
 ```
 
@@ -163,7 +170,7 @@ max            7.90         4.40          6.90         2.50
 
 This was then expanded to breakdown the statistical summary per species:
 
-```
+```python
 sumSeto = df[df["Species"] == "Iris-setosa"].describe().round(2)
 sumVers = df[df["Species"] == "Iris-versicolor"].describe().round(2)
 sumVirg = df[df["Species"] == "Iris-virginica"].describe().round(2)
@@ -207,17 +214,9 @@ min            4.90         2.20          4.50         1.40
 max            7.90         3.80          6.90         2.50
 ```
 
-|       |Sepal Length | Sepal Width | Petal Length | Petal Width|
-|-------|-------------|-------------|--------------|------------|
-|count  |    150.0    |    150.0    |     150.0    |    150.0   |
-|mean   |    5.843333 |    3.054000 |     3.758667 |    1.198667|
-|std    |    0.828066 |    0.433594 |     1.764420 |    0.763161|
-|min    |    4.300000 |    2.000000 |     1.000000 |    0.100000|
-|25%    |    5.100000 |    2.800000 |     1.600000 |    0.300000|
-|50%    |    5.800000 |    3.000000 |     4.350000 |    1.300000|
-|75%    |    6.400000 |    3.300000 |     5.100000 |    1.800000|
-|max    |    7.900000 |    4.400000 |     6.900000 |    2.500000|
+## 4 Data Analysis
 
+### 4.1 Histograms
 
 ## References
 
