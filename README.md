@@ -59,7 +59,7 @@ filename = "./data/iris.csv"
 df = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Species"])
 ```
 
-With the data imported a summary was performed to assess the data integrity and discern the overall structure. To test data integrity 3 tests were performed to check for missing fields and data consistency. The tests performed were: 
+With the data imported a summary was performed to assess the data integrity and discern the overall structure. To test data integrity three tests were performed to check for missing fields and data consistency. The tests performed were: 
 
 1. Shape - This is a utility of NumPy to return the number of attributes and the length of each attribute.
 2. Count - This expands on shape and shows the length of each attribute to check if no data is missing
@@ -77,8 +77,16 @@ countSpecies = df["Species"].value_counts()
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/DataCounts.png "Data Counts")
 
 
-The image below shows the first ten lines of the dataset:
-![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/First10.png "First 10")
+The next test was to check the uniformity and order of the data, by using Python function "head()" the first defined rows can be output as a sample of the dataset. 
+
+``` python
+head = df.groupby("Species").head(5)
+```
+
+The image below shows the first five lines of each species:
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/DataHead.png "Data Heads")
+
 
 |       |Sepal Length | Sepal Width | Petal Length | Petal Width|
 |-------|-------------|-------------|--------------|------------|
