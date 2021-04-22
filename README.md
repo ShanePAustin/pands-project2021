@@ -8,7 +8,7 @@
 
 ## Table of Contents
 
-1. [Problem Statement](#Prblem Statement)
+1. [Problem Statement](#Problem Statement)
 2. [Introduction](#Introduction)
 
 ## Problem Statement 
