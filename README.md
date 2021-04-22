@@ -10,9 +10,9 @@
 
 1. [Problem Statement](#problem-statement)
 2. [Introduction](#introduction)
-3. [Data Set](data-set)
-    1. [Data Summary](data-summary)
-4. [References](references)
+3. [Data Set](#data-set)
+    1. [Data Summary](#data-summary)
+4. [References](#references)
 
 ## Problem Statement 
 
