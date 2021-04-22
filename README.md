@@ -41,6 +41,13 @@ The data set consists of 50 samples from each three species of Iris:
 
 ### 2.1 Libraries
 
+```python
+import csv
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+```
 
 ## 3 Data Set
 
