@@ -29,9 +29,9 @@ def dataSummary():
     #summary production using describe()
     summary = df.describe().round(2)
     #Summary per flower type
-    sumSeto = df.loc[0:49].describe().round(2)
-    sumVers = df.loc[50:99].describe().round(2)
-    sumVirg = df.loc[100:149].describe().round(2)
+    sumSeto = df[df["Species"] == "Iris-setosa"].describe().round(2)
+    sumVers = df[df["Species"] == "Iris-versicolor"].describe().round(2)
+    sumVirg = df[df["Species"] == "Iris-virginica"].describe().round(2)
 
     #output the correlation of the 4 attributes
     correlation = df.corr()
@@ -159,9 +159,9 @@ def heatMap():
     plt.show()
 
 
-#dataSummary()
+dataSummary()
 #histograms()
-scatterPlots()
+#scatterPlots()
 #distPlot()
 #boxPlots()
 #violinPlots()
