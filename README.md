@@ -28,16 +28,6 @@
 ## Introduction
 The Iris flower dataset was introduced by the British statistician and biologist Ronald Fisher in 1936 in his paper (“The Use of Multiple Measurements in Taxonomic Problems”) [3] It focused on how to differentiate Iris species based on the shape and structure of their flowers. The dataset was originally collected by the botanist Edgar Anderson at the Gaspé Peninsula, Canada. Ronald Fisher was regarded by some as the single most important figure in 20th century statistics, and this dataset has since become a typical test case for many statistical classification techniques in the areas of statistics and machine learning.
 
-The data was found and downloaded form the UC Irvine Machine Learning Repository [4], it contains 4 attributes and 150 instances, split into 3 seperate classes (Iris species) of 50 each.
-
-The four variables that were measured for each flower species are shown below:
-
-1. Sepal Length (cm)
-2. Sepal Width (cm)
-3. Petal Length (cm)
-4. Petal Width (cm)
-
-
 The data set consists of 50 samples from each three species of Iris:
 
 |Iris Setosa|Iris Versicolor|Iris Virginica|
@@ -47,27 +37,48 @@ The data set consists of 50 samples from each three species of Iris:
 
 ## Data Set
 
-The image below shows the first ten lines of the dataset:
-![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/First10.png "First 10")
+The data was found and downloaded form the UC Irvine Machine Learning Repository [4], it contains 4 attributes and 150 instances, split into 3 seperate classes (Iris species) of 50 each. A sample of the raw data is shown below:
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/RawData.png "Raw Data")
+
+The four variables that were measured for each flower species are shown below:
+
+1. Sepal Length (cm)
+2. Sepal Width (cm)
+3. Petal Length (cm)
+4. Petal Width (cm)
+
 
 ### Data Summary
 
-``` python
-import csv
-import pandas as pd
+The data was imported into the program and the column names were defined:
 
+``` python
 filename = "./data/iris.csv"
 
-content = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Flower"])
-
-summary = content.describe()
-count = content["Flower"].value_counts()
-
-with open("Summary.txt", "w") as f:
-    
-    f.write(str(summary)+('\n\n')+(str(count)))
-
+df = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width", "Petal Length", "Petal Width", "Species"])
 ```
+
+With the data imported a summary was performed to assess the data integrity and discern the overall structure. To test data integrity 3 tests were performed to check for missing fields and data consistency. The tests performed were: 
+
+1. Shape - This is a utility of NumPy to return the number of attributes and the length of each attribute.
+2. Count - This expands on shape and shows the length of each attribute to check if no data is missing
+3. Count per Species - This check the balance of the dataset to confirm each flower species has an equal length
+
+The code and the ouput of those tests is shown here:
+
+``` python
+shape = df.shape
+
+count = df.count()
+
+countSpecies = df["Species"].value_counts()
+```
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/DataCounts.png "Data Counts")
+
+
+The image below shows the first ten lines of the dataset:
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/First10.png "First 10")
 
 |       |Sepal Length | Sepal Width | Petal Length | Petal Width|
 |-------|-------------|-------------|--------------|------------|
