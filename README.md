@@ -218,6 +218,28 @@ max            7.90         3.80          6.90         2.50
 
 ### 4.1 Histograms
 
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SLHist.png "Sepal Length Histogram")
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SWHist.png "Sepal Width Histogram")
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/PLHist.png "Petal Length Histogram")
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/PWHist.png "Petal Width Histogram")
+
+### 4.2 Scatterplots
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SLSWscatterPlot.png "SLSW Scatter Plot")
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/PLPWscatterPlot.png "PLPW Scatter Plot")
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SLPLscatterPlot.png "SLPL Scatter Plot")
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SWPWscatterPlot.png "SWPW Scatter Plot")
+
+### 4.3 Boxplots
+
+### 4.4 Violinplots
+
 ## References
 
 1) https://towardsdatascience.com/the-iris-dataset-a-little-bit-of-history-and-biology-fb4812f5a7b5
