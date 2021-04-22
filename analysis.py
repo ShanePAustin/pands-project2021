@@ -102,13 +102,13 @@ def histograms():
 #Scatterplots
 def scatterPlots():
     
-    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
+    sns.FacetGrid(df,hue="Species", height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
     plt.savefig("./plots/SLSWscatterPlot.png")
-    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Petal Length", "Petal Width" ).add_legend()
+    sns.FacetGrid(df,hue="Species", height=5).map(plt.scatter, "Petal Length", "Petal Width" ).add_legend()
     plt.savefig("./plots/PLPWscatterPlot.png")
-    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Length", "Petal Length").add_legend()
+    sns.FacetGrid(df,hue="Species", height=5).map(plt.scatter, "Sepal Length", "Petal Length").add_legend()
     plt.savefig("./plots/SLPLscatterPlot.png")
-    sns.FacetGrid(df,hue="Species", height=6).map(plt.scatter, "Sepal Width" , "Petal Width" ).add_legend()
+    sns.FacetGrid(df,hue="Species", height=5).map(plt.scatter, "Sepal Width" , "Petal Width" ).add_legend()
     plt.savefig("./plots/SWPWscatterPlot.png")
 
     sns.pairplot(df,hue="Species",height=3)
@@ -117,7 +117,7 @@ def scatterPlots():
 
 ##########################################################################
 def distPlot():
-    histplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
+    distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
     sns.histplot( df["Sepal Length"] , kde = True, stat="density", linewidth=1, color="firebrick"  , ax=axes[0, 0])
     sns.histplot( df["Sepal Width" ] , kde = True, stat="density", linewidth=1, color="royalblue"  ,ax=axes[0, 1]) 
     sns.histplot( df["Petal Length"] , kde = True, stat="density", linewidth=1, color="forestgreen", ax=axes[1, 0]) 
@@ -159,9 +159,9 @@ def heatMap():
     plt.show()
 
 
-dataSummary()
+#dataSummary()
 #histograms()
-#scatterPlots()
+scatterPlots()
 #distPlot()
 #boxPlots()
 #violinPlots()

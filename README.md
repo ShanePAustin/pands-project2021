@@ -214,6 +214,20 @@ min            4.90         2.20          4.50         1.40
 max            7.90         3.80          6.90         2.50
 ```
 
+Correlation
+
+```
+Data Correlation
+
+              Sepal Length  Sepal Width  Petal Length  Petal Width
+Sepal Length      1.000000    -0.109369      0.871754     0.817954
+Sepal Width      -0.109369     1.000000     -0.420516    -0.356544
+Petal Length      0.871754    -0.420516      1.000000     0.962757
+Petal Width       0.817954    -0.356544      0.962757     1.000000
+```
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/hMap.png "Heat Map")
+
 ## 4 Data Analysis
 
 ### 4.1 Histograms
@@ -226,6 +240,26 @@ max            7.90         3.80          6.90         2.50
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/PWHist.png "Petal Width Histogram")
 
+```python
+ax = plt.axes()
+plt.hist(df["Sepal Length"], color = "firebrick")
+plt.title("Sepal Length Histogram")
+plt.xlabel("Sepal Length")
+plt.grid(linestyle = "dashed", )
+ax.set_facecolor("lightgrey")
+```
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/distPlot.png "Dist Plot")
+
+```python
+distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
+sns.histplot( df["Sepal Length"] , kde = True, stat="density", linewidth=1, color="firebrick"  , ax=axes[0, 0])
+sns.histplot( df["Sepal Width" ] , kde = True, stat="density", linewidth=1, color="royalblue"  ,ax=axes[0, 1]) 
+sns.histplot( df["Petal Length"] , kde = True, stat="density", linewidth=1, color="forestgreen", ax=axes[1, 0]) 
+sns.histplot( df["Petal Width" ] , kde = True, stat="density", linewidth=1, color="violet"     , ax=axes[1, 1])
+```
+
+
 ### 4.2 Scatterplots
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SLSWscatterPlot.png "SLSW Scatter Plot")
@@ -236,9 +270,40 @@ max            7.90         3.80          6.90         2.50
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SWPWscatterPlot.png "SWPW Scatter Plot")
 
+```python
+sns.FacetGrid(df,hue="Species", height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
+```
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/scatterPlot.png "Pair Plot")
+
+```python
+sns.pairplot(df,hue="Species",height=3)
+```
+
 ### 4.3 Boxplots
 
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/boxPlots.png.png "Box Plot")
+
+```python
+    boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
+    sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0], dodge=False)    
+    sns.boxplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[1], dodge=False)
+    sns.boxplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[2], dodge=False)
+    sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[3], dodge=False)
+```
+
+
 ### 4.4 Violinplots
+
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/violinPlots.png "Violin Plot")
+
+```python
+    violinplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
+    sns.violinplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0,0], dodge=False)
+    sns.violinplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[0,1], dodge=False)
+    sns.violinplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[1,0], dodge=False)
+    sns.violinplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[1,1], dodge=False)
+```
 
 ## References
 
