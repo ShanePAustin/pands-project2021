@@ -6,7 +6,12 @@
 
 ### Shane Austin G00318488
 
-## Problem statement 
+## Table of Contents
+
+1. [Problem Statement](#Prblem Statement)
+2. [Introduction](#Introduction)
+
+## Problem Statement 
 
 *This project concerns the well-known Fisher’s Iris data set. You must research the data set and write documentation and code to investigate it. An online search for information on the data set will convince you that many people have investigated it previously. You are expected to be able to break this project into several smaller tasks that are easier to solve, and to plug these together after they have been completed.*
 
