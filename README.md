@@ -282,7 +282,7 @@ sns.pairplot(df,hue="Species",height=3)
 
 ### 4.3 Boxplots
 
-![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/boxPlots.png.png "Box Plot")
+![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/boxPlots.png "Box Plot")
 
 ```python
     boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
