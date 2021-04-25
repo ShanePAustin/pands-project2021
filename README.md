@@ -192,6 +192,7 @@ sumVers = df[df["Species"] == "Iris-versicolor"].describe().round(2)
 sumVirg = df[df["Species"] == "Iris-virginica"].describe().round(2)
 ```
 
+When the data is split like this it is easier to see the reason for the large range with petal length discussed above. The petal lengths on the Iris Setosa are significantly shorter than with the other 2 species. It is also evident that the standard deviations are much lower meaning there us less variation from the mean.
 
 ```
 Data Summary (Setosa)
@@ -233,6 +234,8 @@ max            7.90         3.80          6.90         2.50
 
 Correlation
 
+Finally a correlation was performed on the data to assess the relationships between the variables
+
 ```
 Data Correlation
 
@@ -244,6 +247,27 @@ Petal Width       0.817954    -0.356544      0.962757     1.000000
 ```
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/hMap.png "Heat Map")
+
+This data was all saved to a seperate text file using the code below:
+
+```python
+    with open("Summary.txt", "w") as f:
+        
+        f.write(("Data Summary\n\n"))
+        
+        f.write(("Data Shape\n\n")+(str(shape)+('\n\n')))
+        f.write(("Data Count\n\n")+(str(count)+('\n\n')))    
+        f.write(("Data Count per Species\n\n")+(str(countSpecies)+('\n\n')))
+
+        f.write(("Data Head per Species\n\n")+(str(head)+('\n\n'))) 
+
+        f.write(("Data Summary \n\n")+(str(summary)+('\n\n')))
+        f.write(("Data Summary (Setosa)\n\n")+(str(sumSeto)+('\n\n')))   
+        f.write(("Data Summary (Versicolor)\n\n")+(str(sumVers)+('\n\n')))
+        f.write(("Data Summary (Virginica)\n\n")+(str(sumVirg)+('\n\n')))
+
+        f.write(("Data Correlation\n\n")+(str(correlation)))
+```
 
 ## 4 Data Analysis
 
