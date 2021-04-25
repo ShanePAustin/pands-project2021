@@ -60,39 +60,39 @@ def dataSummary():
 def histograms():
 
     ax = plt.axes()
-    plt.hist(df["Sepal Length"], color = "MediumPurple")
+    plt.hist(df["Sepal Length"], color = "#810f7c", ec = "black")
     plt.title("Sepal Length Histogram")
     plt.xlabel("Sepal Length")
-    plt.grid(linestyle = "dashed", )
+    #plt.grid(linestyle = "dashed")
     ax.set_facecolor("lightgrey")
     plt.savefig("./plots/SLHist.png")
     plt.show()
     
 
     ax = plt.axes()
-    plt.hist(df["Sepal Width"], color = "slateblue")
+    plt.hist(df["Sepal Width"], color = "#8856a7", ec = "black")
     plt.title("Sepal Width Histogram")
     plt.xlabel("Sepal Width")
-    plt.grid(linestyle = "dashed", )
+    #plt.grid(linestyle = "dashed")
     ax.set_facecolor("lightgrey")    
     plt.savefig("./plots/SWHist.png")
     plt.show()
 
     ax = plt.axes()
-    plt.hist(df["Petal Length"], color = "Violet")
+    plt.hist(df["Petal Length"], color = "#8c96c6", ec = "black")
     plt.title("Petal Length Histogram")
     plt.xlabel("Petal Length")
-    plt.grid(linestyle = "dashed", )
+    #plt.grid(linestyle = "dashed")
     ax.set_facecolor("lightgrey")
     plt.savefig("./plots/PLHist.png")
     plt.show()
     
 
     ax = plt.axes()
-    plt.hist(df["Petal Width"], color = "Indigo")
+    plt.hist(df["Petal Width"], color = "#b3cde3", ec = "black")
     plt.title("Petal Width Histogram")
     plt.xlabel("Petal Width")
-    plt.grid(linestyle = "dashed", )
+    #plt.grid(linestyle = "dashed")
     ax.set_facecolor("lightgrey")
     plt.savefig("./plots/PWHist.png")
     plt.show()
@@ -102,27 +102,27 @@ def histograms():
 #Scatterplots
 def scatterPlots():
     
-    sns.FacetGrid(df,hue="Species", palette = ['SlateBlue', 'Violet',  'PaleTurquoise'], height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
+    sns.FacetGrid(df,hue="Species", palette="BuPu_r", height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
     plt.title("Sepal Length / Sepal Width Scatter Plot")
     plt.subplots_adjust(top=0.9)
     plt.savefig("./plots/SLSWscatterPlot.png")
 
-    sns.FacetGrid(df,hue="Species", palette = ['SlateBlue', 'Violet',  'PaleTurquoise'], height=5).map(plt.scatter, "Petal Length", "Petal Width" ).add_legend() 
+    sns.FacetGrid(df,hue="Species", palette="BuPu_r", height=5).map(plt.scatter, "Petal Length", "Petal Width" ).add_legend() 
     plt.title("Petal Length / Petal Width Scatter Plot")     
     plt.subplots_adjust(top=0.9) 
     plt.savefig("./plots/PLPWscatterPlot.png")
 
-    sns.FacetGrid(df,hue="Species", palette = ['SlateBlue', 'Violet',  'PaleTurquoise'], height=5).map(plt.scatter, "Sepal Length", "Petal Length").add_legend()
+    sns.FacetGrid(df,hue="Species", palette="BuPu_r", height=5).map(plt.scatter, "Sepal Length", "Petal Length").add_legend()
     plt.title("Sepal Length / Petal Length Scatter Plot")
     plt.subplots_adjust(top=0.9)
     plt.savefig("./plots/SLPLscatterPlot.png")  
   
-    sns.FacetGrid(df,hue="Species", palette = ['SlateBlue', 'Violet',  'PaleTurquoise'], height=5).map(plt.scatter, "Sepal Width" , "Petal Width" ).add_legend()
+    sns.FacetGrid(df,hue="Species", palette="BuPu_r", height=5).map(plt.scatter, "Sepal Width" , "Petal Width" ).add_legend()
     plt.title("Sepal Width / Petal Width Scatter Plot")
     plt.subplots_adjust(top=0.9)
     plt.savefig("./plots/SWPWscatterPlot.png")
 
-    sns.pairplot(df,hue="Species", palette = ['SlateBlue', 'Violet',  'PaleTurquoise'], height=3)
+    sns.pairplot(df,hue="Species", palette="BuPu_r", height=3)
     plt.savefig("./plots/scatterPlot.png")
 
     plt.show()
@@ -130,10 +130,10 @@ def scatterPlots():
 ##########################################################################
 def distPlot():
     distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
-    sns.histplot( df["Sepal Length"] , kde = True, stat="density", linewidth=1, color="firebrick"  , ax=axes[0, 0])
-    sns.histplot( df["Sepal Width" ] , kde = True, stat="density", linewidth=1, color="royalblue"  ,ax=axes[0, 1]) 
-    sns.histplot( df["Petal Length"] , kde = True, stat="density", linewidth=1, color="forestgreen", ax=axes[1, 0]) 
-    sns.histplot( df["Petal Width" ] , kde = True, stat="density", linewidth=1, color="violet"     , ax=axes[1, 1])
+    sns.histplot( df["Sepal Length"] , kde = True, stat="density", linewidth=1, color="#810f7c", ax=axes[0, 0])
+    sns.histplot( df["Sepal Width" ] , kde = True, stat="density", linewidth=1, color="#8856a7" ,ax=axes[0, 1]) 
+    sns.histplot( df["Petal Length"] , kde = True, stat="density", linewidth=1, color="#8c96c6", ax=axes[1, 0]) 
+    sns.histplot( df["Petal Width" ] , kde = True, stat="density", linewidth=1, color="#b3cde3", ax=axes[1, 1])
     plt.suptitle("Combined Histograms and Distribution Estimation")
     plt.savefig("./plots/distPlot.png")
     plt.show()
@@ -179,7 +179,7 @@ def heatMap():
 #histograms()
 #scatterPlots()
 #distPlot()
-boxPlots()
-violinPlots()
+#boxPlots()
+#violinPlots()
 #stack()
 #heatMap()
