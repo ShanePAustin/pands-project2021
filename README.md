@@ -39,6 +39,8 @@ The data set consists of 50 samples from each three species of Iris:
 |-----------|---------------|--------------|
 |![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_setosa.jpg "Iris Setosa")|![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_versicolor.jpg "Iris Versicolor")|![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_virginica.jpg "Iris Virginica")|
 
+The images above taken from wikipedia [2] show the three subspecies of Iris 
+
 ### 2.1 Libraries
 
 ```python
@@ -72,6 +74,12 @@ The four variables that were measured for each flower species are shown below:
 3. Petal Length (cm)
 4. Petal Width (cm)
 
+The three species of Iris are:
+
+* Iris Setosa
+* Iris Versicolor
+* Iris Virginica
+
 
 ### 3.1 Data Summary
 
@@ -100,6 +108,7 @@ count = df.count()
 
 countSpecies = df["Species"].value_counts()
 ```
+The output confirms that the data consists of 150 rows and 5 columns. Each column contains 150 rows and each species contains 50 rows each. This is what was expected from the description of the dataset and confirms that there are no missing fields.
 
 ```
 Data Shape
@@ -123,14 +132,13 @@ Iris-setosa        50
 Name: Species, dtype: int64
 ```
 
-
 The next test was to check the uniformity and order of the data, by using Python function "head()" the first defined rows can be output as a sample of the dataset. 
 
 ``` python
 head = df.groupby("Species").head(5)
 ```
 
-The image below shows the first five lines of each species:
+The image below shows the first five lines of each species, from this it can be seen that the data is ordered and in the expected order:
 
 ```
 Data Head per Species
@@ -160,6 +168,7 @@ Once the integrity of the data has been established, a surface level statistical
 ```python
 summary = df.describe().round(2)
 ```
+The data shows the largest deviation of data is present with the petal length variable, highligthed by the largest range between min and max lengths (1 -6.9) compared to sepal length being (4.3-7.9)
 
 ```
 Data Summary 
@@ -175,13 +184,14 @@ min            4.30         2.00          1.00         0.10
 max            7.90         4.40          6.90         2.50
 ```
 
-This was then expanded to breakdown the statistical summary per species:
+While the above is informative, it is more benefical to perform the same analyis seperate by species. Therefore the describe() function was expanded to breakdown the statistical summary per species. The code to do this is layed out below:
 
 ```python
 sumSeto = df[df["Species"] == "Iris-setosa"].describe().round(2)
 sumVers = df[df["Species"] == "Iris-versicolor"].describe().round(2)
 sumVirg = df[df["Species"] == "Iris-virginica"].describe().round(2)
 ```
+
 
 ```
 Data Summary (Setosa)
