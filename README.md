@@ -138,7 +138,7 @@ The next test was to check the uniformity and order of the data, by using Python
 head = df.groupby("Species").head(5)
 ```
 
-The image below shows the first five lines of each species, from this it can be seen that the data is ordered and in the expected order:
+The table below shows the first five lines of each species, from this it can be seen that the data is ordered and in the expected order:
 
 ```
 Data Head per Species
@@ -234,7 +234,7 @@ max            7.90         3.80          6.90         2.50
 
 Correlation
 
-Finally a correlation was performed on the data to assess the relationships between the variables
+Finally a correlation was performed on the data to assess the relationships between the variables. The closer to 1 the stronger the correlation exists between the two variables.
 
 ```
 Data Correlation
@@ -245,6 +245,19 @@ Sepal Width      -0.109369     1.000000     -0.420516    -0.356544
 Petal Length      0.871754    -0.420516      1.000000     0.962757
 Petal Width       0.817954    -0.356544      0.962757     1.000000
 ```
+
+The code shown utilised Seaborn to create a heatmap of the table above, The darker the colour the stronger the correlation. This is the first example of the functionality of python to visualise data, which turns a table of numbers into an easily interpertable image.
+
+```python
+    sns.heatmap(df.corr(),cmap="BuPu", annot=True)
+    plt.savefig("./plots/hMap.png")
+```
+
+A quick glance at the heatmap below shows a strong correlation between the Variable pairs:
+
+* Petal length - Petal width
+* Petal length - Sepal length
+* Petal Width - Sepal length
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/hMap.png "Heat Map")
 
