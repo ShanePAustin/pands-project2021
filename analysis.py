@@ -60,7 +60,7 @@ def dataSummary():
 def histograms():
 
     ax = plt.axes()
-    plt.hist(df["Sepal Length"], color = "firebrick")
+    plt.hist(df["Sepal Length"], color = "MediumPurple")
     plt.title("Sepal Length Histogram")
     plt.xlabel("Sepal Length")
     plt.grid(linestyle = "dashed", )
@@ -70,7 +70,7 @@ def histograms():
     
 
     ax = plt.axes()
-    plt.hist(df["Sepal Width"], color = "royalblue")
+    plt.hist(df["Sepal Width"], color = "slateblue")
     plt.title("Sepal Width Histogram")
     plt.xlabel("Sepal Width")
     plt.grid(linestyle = "dashed", )
@@ -79,7 +79,7 @@ def histograms():
     plt.show()
 
     ax = plt.axes()
-    plt.hist(df["Petal Length"], color = "forestgreen")
+    plt.hist(df["Petal Length"], color = "Violet")
     plt.title("Petal Length Histogram")
     plt.xlabel("Petal Length")
     plt.grid(linestyle = "dashed", )
@@ -89,7 +89,7 @@ def histograms():
     
 
     ax = plt.axes()
-    plt.hist(df["Petal Width"], color = "violet")
+    plt.hist(df["Petal Width"], color = "Indigo")
     plt.title("Petal Width Histogram")
     plt.xlabel("Petal Width")
     plt.grid(linestyle = "dashed", )
@@ -102,27 +102,27 @@ def histograms():
 #Scatterplots
 def scatterPlots():
     
-    sns.FacetGrid(df,hue="Species", height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
+    sns.FacetGrid(df,hue="Species", palette = ['SlateBlue', 'Violet',  'PaleTurquoise'], height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
     plt.title("Sepal Length / Sepal Width Scatter Plot")
     plt.subplots_adjust(top=0.9)
     plt.savefig("./plots/SLSWscatterPlot.png")
 
-    sns.FacetGrid(df,hue="Species", height=5).map(plt.scatter, "Petal Length", "Petal Width" ).add_legend() 
+    sns.FacetGrid(df,hue="Species", palette = ['SlateBlue', 'Violet',  'PaleTurquoise'], height=5).map(plt.scatter, "Petal Length", "Petal Width" ).add_legend() 
     plt.title("Petal Length / Petal Width Scatter Plot")     
     plt.subplots_adjust(top=0.9) 
     plt.savefig("./plots/PLPWscatterPlot.png")
 
-    sns.FacetGrid(df,hue="Species", height=5).map(plt.scatter, "Sepal Length", "Petal Length").add_legend()
+    sns.FacetGrid(df,hue="Species", palette = ['SlateBlue', 'Violet',  'PaleTurquoise'], height=5).map(plt.scatter, "Sepal Length", "Petal Length").add_legend()
     plt.title("Sepal Length / Petal Length Scatter Plot")
     plt.subplots_adjust(top=0.9)
     plt.savefig("./plots/SLPLscatterPlot.png")  
   
-    sns.FacetGrid(df,hue="Species", height=5).map(plt.scatter, "Sepal Width" , "Petal Width" ).add_legend()
+    sns.FacetGrid(df,hue="Species", palette = ['SlateBlue', 'Violet',  'PaleTurquoise'], height=5).map(plt.scatter, "Sepal Width" , "Petal Width" ).add_legend()
     plt.title("Sepal Width / Petal Width Scatter Plot")
     plt.subplots_adjust(top=0.9)
     plt.savefig("./plots/SWPWscatterPlot.png")
 
-    sns.pairplot(df,hue="Species",height=3)
+    sns.pairplot(df,hue="Species", palette = ['SlateBlue', 'Violet',  'PaleTurquoise'], height=3)
     plt.savefig("./plots/scatterPlot.png")
 
     plt.show()
@@ -150,20 +150,20 @@ def stack():
 ##########################################################################
 def boxPlots():
     boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
-    sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0], dodge=False)    
-    sns.boxplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[1], dodge=False)
-    sns.boxplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[2], dodge=False)
-    sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[3], dodge=False)
+    sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="BuPu_r", ax=axes[0], dodge=False)    
+    sns.boxplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="BuPu_r", ax=axes[1], dodge=False)
+    sns.boxplot(x="Species", y="Petal Length", hue="Species", data=df, palette="BuPu_r", ax=axes[2], dodge=False)
+    sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="BuPu_r", ax=axes[3], dodge=False)
     plt.suptitle("Box Plots")
     plt.savefig("./plots/boxPlots.png")
     plt.show()
 
 def violinPlots():
     violinplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
-    sns.violinplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0,0], dodge=False)
-    sns.violinplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[0,1], dodge=False)
-    sns.violinplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[1,0], dodge=False)
-    sns.violinplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[1,1], dodge=False)
+    sns.violinplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="BuPu_r", ax=axes[0,0], dodge=False)
+    sns.violinplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="BuPu_r", ax=axes[0,1], dodge=False)
+    sns.violinplot(x="Species", y="Petal Length", hue="Species", data=df, palette="BuPu_r", ax=axes[1,0], dodge=False)
+    sns.violinplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="BuPu_r", ax=axes[1,1], dodge=False)
     plt.suptitle("Violin Plots")
     plt.savefig("./plots/violinPlots.png")
     plt.show()
