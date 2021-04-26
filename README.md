@@ -290,19 +290,19 @@ The first plot to perform is to visualise the distribution of each variable, the
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SLHist.png "Sepal Length Histogram")
 
-The highest frequencies of Sepal Length are around 5.5cm and 6.25cm both with a count over 25, there is another peak around 4.75-5cm of 23. These are likely to indicate the means of the three seperate species. 
+* The highest frequencies of Sepal Length are around 5.5cm and 6.25cm both with a count over 25, there is another peak around 4.75-5cm of 23. These are likely to indicate the means of the three seperate species. 
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SWHist.png "Sepal Width Histogram")
 
-Sepal Width has a more standard distribution with the highest frequency around 3cm with a count of over 35 instances.
+* Sepal Width has a more standard distribution with the highest frequency around 3cm with a count of over 35 instances.
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/PLHist.png "Petal Length Histogram")
 
-Petal Length has two distinct peaks the largest is around 1-1.5cm, this is likely due to the trend that Iris Setosa petals are significantly shorter than the other 2 subspecies. 
+* Petal Length has two distinct peaks the largest is around 1-1.5cm, this is likely due to the trend that Iris Setosa petals are significantly shorter than the other 2 subspecies. 
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/PWHist.png "Petal Width Histogram")
 
-Petal Width also has three distinct peaks which are likely attributed to the 3 subspecies.
+* Petal Width also has three distinct peaks which are likely attributed to the 3 subspecies.
 
 The sample code for one Histogram is shown below:
 
@@ -313,6 +313,8 @@ The sample code for one Histogram is shown below:
     plt.xlabel("Sepal Length")
     ax.set_facecolor("lightgrey")
 ```
+
+
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/distPlot.png "Dist Plot")
 

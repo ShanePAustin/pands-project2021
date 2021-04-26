@@ -126,13 +126,14 @@ def scatterPlots():
 ##########################################################################
 def distPlot():
     distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
-    sns.histplot( df["Sepal Length"] , kde = True, stat="density", linewidth=1, color="#810f7c", ax=axes[0, 0])
-    sns.histplot( df["Sepal Width" ] , kde = True, stat="density", linewidth=1, color="#8856a7" ,ax=axes[0, 1]) 
-    sns.histplot( df["Petal Length"] , kde = True, stat="density", linewidth=1, color="#8c96c6", ax=axes[1, 0]) 
-    sns.histplot( df["Petal Width" ] , kde = True, stat="density", linewidth=1, color="#b3cde3", ax=axes[1, 1])
-    plt.suptitle("Combined Histograms and Distribution Estimation")
+    sns.histplot( x="Sepal Length", hue="Species", data = df, palette="BuPu_r", ax=axes[0,0], multiple = "stack")
+    sns.histplot( x="Sepal Width",  hue="Species", data = df, palette="BuPu_r", ax=axes[0,1], multiple = "stack")
+    sns.histplot( x="Petal Length", hue="Species", data = df, palette="BuPu_r", ax=axes[1,0], multiple = "stack")
+    sns.histplot( x="Petal Width",  hue="Species", data = df, palette="BuPu_r", ax=axes[1,1], multiple = "stack")
+    plt.suptitle("Combined Histograms Seperated by Species")
     plt.savefig("./plots/distPlot.png")
     plt.show()
+
 ##########################################################################
 def stack():
     df.plot(kind='barh', stacked=True)  
@@ -170,11 +171,10 @@ def heatMap():
     plt.savefig("./plots/hMap.png")
     plt.show()
 
-
 #dataSummary()
 #histograms()
 #scatterPlots()
-#distPlot()
+distPlot()
 #boxPlots()
 #violinPlots()
 #stack()
