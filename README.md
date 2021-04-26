@@ -286,31 +286,43 @@ This data was all saved to a seperate text file using the code below:
 
 ### 4.1 Histograms
 
+The first plot to perform is to visualise the distribution of each variable, the following four plots are Histograms of each variable divided into ten bins. 
+
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SLHist.png "Sepal Length Histogram")
+
+The highest frequencies of Sepal Length are around 5.5cm and 6.25cm both with a count over 25, there is another peak around 4.75-5cm of 23. These are likely to indicate the means of the three seperate species. 
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SWHist.png "Sepal Width Histogram")
 
+Sepal Width has a more standard distribution with the highest frequency around 3cm with a count of over 35 instances.
+
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/PLHist.png "Petal Length Histogram")
+
+Petal Length has two distinct peaks the largest is around 1-1.5cm, this is likely due to the trend that Iris Setosa petals are significantly shorter than the other 2 subspecies. 
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/PWHist.png "Petal Width Histogram")
 
+Petal Width also has three distinct peaks which are likely attributed to the 3 subspecies.
+
+The sample code for one Histogram is shown below:
+
 ```python
-ax = plt.axes()
-plt.hist(df["Sepal Length"], color = "firebrick")
-plt.title("Sepal Length Histogram")
-plt.xlabel("Sepal Length")
-plt.grid(linestyle = "dashed", )
-ax.set_facecolor("lightgrey")
+    ax = plt.axes()
+    plt.hist(df["Sepal Length"], color = "#810f7c", ec = "black")
+    plt.title("Sepal Length Histogram")
+    plt.xlabel("Sepal Length")
+    ax.set_facecolor("lightgrey")
 ```
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/distPlot.png "Dist Plot")
 
 ```python
-distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
-sns.histplot( df["Sepal Length"] , kde = True, stat="density", linewidth=1, color="firebrick"  , ax=axes[0, 0])
-sns.histplot( df["Sepal Width" ] , kde = True, stat="density", linewidth=1, color="royalblue"  ,ax=axes[0, 1]) 
-sns.histplot( df["Petal Length"] , kde = True, stat="density", linewidth=1, color="forestgreen", ax=axes[1, 0]) 
-sns.histplot( df["Petal Width" ] , kde = True, stat="density", linewidth=1, color="violet"     , ax=axes[1, 1])
+    distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
+    sns.histplot( df["Sepal Length"] , kde = True, stat="density", linewidth=1, color="#810f7c", ax=axes[0, 0])
+    sns.histplot( df["Sepal Width" ] , kde = True, stat="density", linewidth=1, color="#8856a7" ,ax=axes[0, 1]) 
+    sns.histplot( df["Petal Length"] , kde = True, stat="density", linewidth=1, color="#8c96c6", ax=axes[1, 0]) 
+    sns.histplot( df["Petal Width" ] , kde = True, stat="density", linewidth=1, color="#b3cde3", ax=axes[1, 1])
+    plt.suptitle("Combined Histograms and Distribution Estimation")
 ```
 
 
@@ -325,7 +337,9 @@ sns.histplot( df["Petal Width" ] , kde = True, stat="density", linewidth=1, colo
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SWPWscatterPlot.png "SWPW Scatter Plot")
 
 ```python
-sns.FacetGrid(df,hue="Species", height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
+    sns.FacetGrid(df,hue="Species", palette="BuPu_r", height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
+    plt.title("Sepal Length / Sepal Width Scatter Plot")
+    plt.subplots_adjust(top=0.9)
 ```
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/scatterPlot.png "Pair Plot")
@@ -340,10 +354,11 @@ sns.pairplot(df,hue="Species",height=3)
 
 ```python
     boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
-    sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0], dodge=False)    
-    sns.boxplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[1], dodge=False)
-    sns.boxplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[2], dodge=False)
-    sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[3], dodge=False)
+    sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="BuPu_r", ax=axes[0], dodge=False)    
+    sns.boxplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="BuPu_r", ax=axes[1], dodge=False)
+    sns.boxplot(x="Species", y="Petal Length", hue="Species", data=df, palette="BuPu_r", ax=axes[2], dodge=False)
+    sns.boxplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="BuPu_r", ax=axes[3], dodge=False)
+    plt.suptitle("Box Plots")
 ```
 
 
@@ -353,10 +368,11 @@ sns.pairplot(df,hue="Species",height=3)
 
 ```python
     violinplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
-    sns.violinplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="bright", ax=axes[0,0], dodge=False)
-    sns.violinplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="bright", ax=axes[0,1], dodge=False)
-    sns.violinplot(x="Species", y="Petal Length", hue="Species", data=df, palette="bright", ax=axes[1,0], dodge=False)
-    sns.violinplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="bright", ax=axes[1,1], dodge=False)
+    sns.violinplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="BuPu_r", ax=axes[0,0], dodge=False)
+    sns.violinplot(x="Species", y="Sepal Width" , hue="Species", data=df, palette="BuPu_r", ax=axes[0,1], dodge=False)
+    sns.violinplot(x="Species", y="Petal Length", hue="Species", data=df, palette="BuPu_r", ax=axes[1,0], dodge=False)
+    sns.violinplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="BuPu_r", ax=axes[1,1], dodge=False)
+    plt.suptitle("Violin Plots")
 ```
 
 ## References
