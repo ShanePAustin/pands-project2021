@@ -401,3 +401,39 @@ sns.pairplot(df,hue="Species",height=3)
 
 7) https://www.researchgate.net/publication/344196553_Machine-learning_analysis_for_the_Iris_dataset
 
+### Libraries
+
+8) https://docs.python.org/3/library/csv.html
+
+9) https://pypi.org/project/pandas/
+
+10) https://realpython.com/python-matplotlib-guide/
+
+11) https://www.w3schools.com/python/numpy/numpy_intro.asp
+
+12) https://seaborn.pydata.org/
+
+### Stats
+
+13) https://machinelearningknowledge.ai/pandas-tutorial-describe-head-unique-and-count/
+
+14) https://realpython.com/numpy-scipy-pandas-correlation-python/
+
+### Plots
+
+15) https://seaborn.pydata.org/generated/seaborn.heatmap.html
+
+16) https://stackoverflow.com/questions/33203645/how-to-plot-a-histogram-using-matplotlib-in-python-with-a-list-of-data
+
+17) https://seaborn.pydata.org/generated/seaborn.histplot.html
+
+18) https://seaborn.pydata.org/tutorial/axis_grids.html
+
+19) https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+
+20) https://seaborn.pydata.org/generated/seaborn.pairplot.html
+
+21) https://pythonbasics.org/seaborn-boxplot/
+
+22) https://seaborn.pydata.org/generated/seaborn.violinplot.html
+
