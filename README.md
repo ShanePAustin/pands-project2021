@@ -318,6 +318,11 @@ To check the assumptions of distrubution from the histograms, a stacked plot of 
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/distPlot.png "Dist Plot")
 
+It is evident from this that the Setosa Petal Length and Width is easily distinguishable form the other species. The Iris Versicolor and Virginica are somewhat seperated form each other but not entirely distinguishable.
+The Sepal Length variable is still tightly packed with only the Setosa with significantly higher counts within it's range. Whereas Sepal Width does not seems to display any observable pattern.
+
+The code shown was written to create the stack histogram 
+
 ```python
     distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
     sns.histplot( x="Sepal Length", hue="Species", data = df, palette="BuPu_r", ax=axes[0,0], multiple = "stack")
@@ -328,7 +333,10 @@ To check the assumptions of distrubution from the histograms, a stacked plot of 
 ```
 
 
+
 ### 4.2 Scatterplots
+
+
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SLSWscatterPlot.png "SLSW Scatter Plot")
 
