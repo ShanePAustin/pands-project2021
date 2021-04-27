@@ -56,7 +56,9 @@ def dataSummary():
         f.write(("Data Correlation\n\n")+(str(correlation)))
 
 ###############################################################################################################################
-#Histograms
+#Histograms using matplotlib
+#Function to create 4 Histograms for each of the measured variables and save the output to image file
+
 def histograms():
 
     ax = plt.axes()
@@ -95,7 +97,10 @@ def histograms():
     
 
 ##########################################################################
-#Scatterplots
+#Scatterplots using Seaborn
+#Function to create 4 Scatterplots seperated by Species, for each of the variable pairs and save the output to image file
+#A seaborn pairplot to combine scatter and kernal density estimate
+
 def scatterPlots():
     
     sns.FacetGrid(df,hue="Species", palette="BuPu_r", height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
@@ -124,6 +129,8 @@ def scatterPlots():
     plt.show()
 
 ##########################################################################
+#Stacked histograms showing the values of each species. Combined into one output png
+
 def distPlot():
     distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
     sns.histplot( x="Sepal Length", hue="Species", data = df, palette="BuPu_r", ax=axes[0,0], multiple = "stack")
@@ -135,16 +142,8 @@ def distPlot():
     plt.show()
 
 ##########################################################################
-def stack():
-    df.plot(kind='barh', stacked=True)  
-    plt.xlabel('in cm')  
-    plt.ylabel('Sample of 150 flowers') 
-    plt.title('Stacked Bar Graph')
-    plt.tight_layout()
-    #plt.savefig("./plots/stackPlot.png")
-    plt.show() 
+#Seaborn Box Plots of each sppecies by measured variable. Combined into one output png
 
-##########################################################################
 def boxPlots():
     boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
     sns.boxplot(x="Species", y="Sepal Length", hue="Species", data=df, palette="BuPu_r", ax=axes[0], dodge=False)    
@@ -154,6 +153,9 @@ def boxPlots():
     plt.suptitle("Box Plots")
     plt.savefig("./plots/boxPlots.png")
     plt.show()
+
+##########################################################################
+#Seaborn Violin Plots of each sppecies by measured variable. Combined into one output png
 
 def violinPlots():
     violinplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
@@ -165,17 +167,22 @@ def violinPlots():
     plt.savefig("./plots/violinPlots.png")
     plt.show()
 
+##########################################################################
+#Seaborn Heat Map of the correlation table
+
 def heatMap():
     sns.heatmap(df.corr(),cmap="BuPu", annot=True)
     plt.title("Correlation Heat Map")
     plt.savefig("./plots/hMap.png")
     plt.show()
 
+##########################################################################
+#Commands to run each Function
+
 #dataSummary()
 #histograms()
-#scatterPlots()
-distPlot()
+scatterPlots()
+#distPlot()
 #boxPlots()
 #violinPlots()
-#stack()
 #heatMap()
