@@ -42,6 +42,8 @@ The data set consists of 50 samples from each three species of Iris:
 
 The images above taken from wikipedia [2] show the three subspecies of Iris 
 
+___
+
 ### 2.1 Libraries
 
 ```python
@@ -51,6 +53,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 ```
+___
 
 ## 3 Data Set
 
@@ -283,6 +286,8 @@ This data was all saved to a seperate text file using the code below:
         f.write(("Data Correlation\n\n")+(str(correlation)))
 ```
 
+___
+
 ## 4 Data Analysis
 
 ### 4.1 Histograms
@@ -314,6 +319,7 @@ The sample code for one Histogram is shown below:
     plt.xlabel("Sepal Length")
     ax.set_facecolor("lightgrey")
 ```
+___
 
 To check the assumptions of distrubution from the histograms, a stacked plot of the seperate Species was generated to further breakdown the distrubution analysis.
 
@@ -333,11 +339,16 @@ The code shown was written to create the stack histogram
     plt.suptitle("Combined Histograms Seperated by Species")
 ```
 
-
+___
 
 ### 4.2 Scatterplots
 
-Scatter plots are used to plot data points on a horizontal and a vertical axis in the attempt to show how much one variable is affected by another. The relationship between two variables is called their correlation.
+Scatter plots are used to plot data points on a horizontal and a vertical axis in the attempt to show how much one variable is affected by another. The relationship between two variables is called their correlation. The next four plots are scatter plots of the follow 4 pairs:
+
+* Sepal Length - Sepal Width
+* Petal Length - Petal Width
+* Sepal Length - Petal Length
+* Sepal Width - Petal Width
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SLSWscatterPlot.png "SLSW Scatter Plot")
 
@@ -361,6 +372,8 @@ The code shown is an example of the Scatterplot for Sepal Length - Sepal Width:
     plt.subplots_adjust(top=0.9)
 ```
 
+___
+
 Pair plot can neatly represent all the above plots into one frame, the scatter plots are shown and are easily compared amongst each other and on the diagonal histograms can be plotted but in this case the Kernel distribution estimate is displayed and clearly shows the observations of the stack histogram.
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/scatterPlot.png "Pair Plot")
@@ -371,7 +384,11 @@ This comprehensive plot is simply generated utilising Seaborn's Pairplot, shown 
 sns.pairplot(df,hue="Species", palette="BuPu_r", height=3)
 ```
 
+___
+
 ### 4.3 Boxplots
+
+A box plot is a way of summarizing a set of data measured on an interval scale. The ends of the box are the upper and lower quartiles, and the median is marked by a vertical line inside the box. The “whiskers” identify the outliers.
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/boxPlots.png "Box Plot")
 
@@ -384,6 +401,7 @@ sns.pairplot(df,hue="Species", palette="BuPu_r", height=3)
     plt.suptitle("Box Plots")
 ```
 
+___
 
 ### 4.4 Violinplots
 
@@ -397,8 +415,12 @@ sns.pairplot(df,hue="Species", palette="BuPu_r", height=3)
     sns.violinplot(x="Species", y="Petal Width" , hue="Species", data=df, palette="BuPu_r", ax=axes[1,1], dodge=False)
     plt.suptitle("Violin Plots")
 ```
+
+___
+
 ## 5 Conclusions
 
+___
 
 ## References
 
