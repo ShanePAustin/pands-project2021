@@ -337,7 +337,7 @@ The code shown was written to create the stack histogram
 
 ### 4.2 Scatterplots
 
-
+Scatter plots are used to plot data points on a horizontal and a vertical axis in the attempt to show how much one variable is affected by another. The relationship between two variables is called their correlation.
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SLSWscatterPlot.png "SLSW Scatter Plot")
 
@@ -347,16 +347,28 @@ The code shown was written to create the stack histogram
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SWPWscatterPlot.png "SWPW Scatter Plot")
 
+From the four scatter plots, the Iris Setosa has smaller sepal length but higher width. Versicolor displays more middling values while Virginica has larger sepal lengths and smaller sepal widths.
+
+Setosa has the smallest petal values, again Versicolor has average petal length and petal width while the Virginica species has the highest petal length and petal width.
+
+There seems to be a positive correlation between the length and width of all the species, however there is a distinguishing strong correlation and relationship between petal length and petal width.
+
+The code shown is an example of the Scatterplot for Sepal Length - Sepal Width:
+
 ```python
     sns.FacetGrid(df,hue="Species", palette="BuPu_r", height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
     plt.title("Sepal Length / Sepal Width Scatter Plot")
     plt.subplots_adjust(top=0.9)
 ```
 
+Pair plot can neatly represent all the above plots into one frame, the scatter plots are shown and are easily compared amongst each other and on the diagonal histograms can be plotted but in this case the Kernel distribution estimate is displayed and clearly shows the observations of the stack histogram.
+
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/scatterPlot.png "Pair Plot")
 
+This comprehensive plot is simply generated utilising Seaborn's Pairplot, shown below:
+
 ```python
-sns.pairplot(df,hue="Species",height=3)
+sns.pairplot(df,hue="Species", palette="BuPu_r", height=3)
 ```
 
 ### 4.3 Boxplots
