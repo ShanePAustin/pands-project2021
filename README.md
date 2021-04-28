@@ -53,6 +53,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 ```
+
+```csv``` CSV (Comma Seperated Values) is the most common import/export format for spreadsheets and databases. [8]
+
+```pandas``` pandas is a Python package to simplify working with data structures. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. The two primary data structures of pandas are; Series (1-dimensional) and DataFrame (2-dimensional)[9]
+
+```matplotlib``` matplotlib is a popular visualization tool and essentially a plotting library for Python and was developed to emulate MATLAB and uses pylab to do this. [10]
+
+```numpy``` NumPy is an open-source numerical Python library. NumPy contains a multi-dimensional array and matrix data structures. It can be utilised to perform a number of mathematical operations on arrays such as trigonometric, statistical, and algebraic routines [11]
+
+```seaborn``` Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics [12]
+
 ___
 
 ## 3 Data Set
@@ -99,9 +110,9 @@ df = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width"
 
 With the data imported a summary was performed to assess the data integrity and discern the overall structure. To test data integrity three tests were performed to check for missing fields and data consistency. The tests performed were: 
 
-1. Shape - This is a utility of NumPy to return the number of attributes and the length of each attribute.
-2. Count - This expands on shape and shows the length of each attribute to check if no data is missing
-3. Count per Species - This check the balance of the dataset to confirm each flower species has an equal length
+1. ```shape``` - This is a utility of NumPy to return the number of attributes and the length of each attribute.
+2. ```count``` - This expands on shape and shows the length of each attribute to check if no data is missing
+3. ```count``` per Species - This check the balance of the dataset to confirm each flower species has an equal length
 
 The code and the ouput of those tests is shown here:
 
@@ -136,7 +147,7 @@ Iris-setosa        50
 Name: Species, dtype: int64
 ```
 
-The next test was to check the uniformity and order of the data, by using Python function "head()" the first defined rows can be output as a sample of the dataset. 
+The next test was to check the uniformity and order of the data, by using Python function ```head()``` the first defined rows can be output as a sample of the dataset. 
 
 ``` python
 head = df.groupby("Species").head(5)
@@ -167,7 +178,7 @@ Data Head per Species
 
 #### 3.1.2 Data Statistics
 
-Once the integrity of the data has been established, a surface level statistical analysis can be performed using the Python function "describe()". Ths shows the count, mean, standard deviation, min, max and the quartile points of the sorted data. The code and result of this (rounded to 2 decimal places) is shown below:
+Once the integrity of the data has been established, a surface level statistical analysis can be performed using the Python function ```describe()```. Ths shows the count, mean, standard deviation, min, max and the quartile points of the sorted data. The code and result of this (rounded to 2 decimal places) is shown below:
 
 ```python
 summary = df.describe().round(2)
@@ -188,7 +199,7 @@ min            4.30         2.00          1.00         0.10
 max            7.90         4.40          6.90         2.50
 ```
 
-While the above is informative, it is more benefical to perform the same analyis seperate by species. Therefore the describe() function was expanded to breakdown the statistical summary per species. The code to do this is layed out below:
+While the above is informative, it is more benefical to perform the same analyis seperate by species. Therefore the ```describe()``` function was expanded to breakdown the statistical summary per species. The code to do this is layed out below:
 
 ```python
 sumSeto = df[df["Species"] == "Iris-setosa"].describe().round(2)
@@ -238,7 +249,7 @@ max            7.90         3.80          6.90         2.50
 
 Correlation
 
-Finally a correlation was performed on the data to assess the relationships between the variables. The closer to 1 the stronger the correlation exists between the two variables.
+Finally a correlation ```corr()``` was performed on the data to assess the relationships between the variables. The closer to 1 the stronger the correlation exists between the two variables.
 
 ```
 Data Correlation
@@ -250,7 +261,7 @@ Petal Length      0.871754    -0.420516      1.000000     0.962757
 Petal Width       0.817954    -0.356544      0.962757     1.000000
 ```
 
-The code shown utilised Seaborn to create a heatmap of the table above, The darker the colour the stronger the correlation. This is the first example of the functionality of python to visualise data, which turns a table of numbers into an easily interpertable image.
+The code shown utilised Seaborn to create a ```heatmap``` of the table above, The darker the colour the stronger the correlation. This is the first example of the functionality of python to visualise data, which turns a table of numbers into an easily interpertable image.
 
 ```python
     sns.heatmap(df.corr(),cmap="BuPu", annot=True)
@@ -310,7 +321,7 @@ The first plot to perform is to visualise the distribution of each variable, the
 
 * Petal Width also has three distinct peaks which are likely attributed to the 3 subspecies.
 
-The sample code for one Histogram is shown below:
+The sample code using Matplotlib ```hist``` for one Histogram is shown below:
 
 ```python
     ax = plt.axes()
@@ -328,7 +339,7 @@ To check the assumptions of distrubution from the histograms, a stacked plot of 
 It is evident from this that the Setosa Petal Length and Width is easily distinguishable form the other species. The Iris Versicolor and Virginica are somewhat seperated form each other but not entirely distinguishable.
 The Sepal Length variable is still tightly packed with only the Setosa with significantly higher counts within it's range. Whereas Sepal Width does not seems to display any observable pattern.
 
-The code shown was written to create the stack histogram 
+The code shown was written to create the stack histogram using Seaborn ```histplot```:
 
 ```python
     distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
@@ -364,7 +375,7 @@ Setosa has the smallest petal values, again Versicolor has average petal length 
 
 There seems to be a positive correlation between the length and width of all the species, however there is a distinguishing strong correlation and relationship between petal length and petal width.
 
-The code shown is an example of the Scatterplot for Sepal Length - Sepal Width:
+The code shown is an example of the Scatterplot usins Seaborn ```FacetGrid```, ```scatter``` for Sepal Length - Sepal Width:
 
 ```python
     sns.FacetGrid(df,hue="Species", palette="BuPu_r", height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
@@ -378,7 +389,7 @@ Pair plot can neatly represent all the above plots into one frame, the scatter p
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/scatterPlot.png "Pair Plot")
 
-This comprehensive plot is simply generated utilising Seaborn's Pairplot, shown below:
+This comprehensive plot is simply generated utilising Seaborn's ```pairplot```, shown below:
 
 ```python
 sns.pairplot(df,hue="Species", palette="BuPu_r", height=3)
@@ -394,7 +405,7 @@ The image belwo shows the boxplots of the three individual species of Iris split
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/boxPlots.png "Box Plot")
 
-This was created using Seaborn with the full code shown here:
+This was created using Seaborn ```boxplot``` with the full code shown here:
 
 ```python
     boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
@@ -411,7 +422,7 @@ ___
 
 Violin Plots are an extension of Box Plots showing the range, median and distribution of the data, but the include the KDE to represent the shape and distriburion of the data.
 
-The image below represents the Violin Plots in the same way as the Box Plots, the KDe is shown with a basic representation of a box plot within.
+The image below represents the Violin Plots in the same way as the Box Plots, the KDE is shown with a basic representation of a box plot within.
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/violinPlots.png "Violin Plot")
 
