@@ -374,7 +374,7 @@ The code shown is an example of the Scatterplot for Sepal Length - Sepal Width:
 
 ___
 
-Pair plot can neatly represent all the above plots into one frame, the scatter plots are shown and are easily compared amongst each other and on the diagonal histograms can be plotted but in this case the Kernel distribution estimate is displayed and clearly shows the observations of the stack histogram.
+Pair plot can neatly represent all the above plots into one frame, the scatter plots are shown and are easily compared amongst each other and on the diagonal histograms can be plotted but in this case the Kernel distribution estimate (KDE) is displayed and clearly shows the observations of the stack histogram.
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/scatterPlot.png "Pair Plot")
 
@@ -390,7 +390,11 @@ ___
 
 A box plot is a way of summarizing a set of data measured on an interval scale. The ends of the box are the upper and lower quartiles, and the median is marked by a vertical line inside the box. The “whiskers” identify the outliers.
 
+The image belwo shows the boxplots of the three individual species of Iris split over the 4 mearsured variables.
+
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/boxPlots.png "Box Plot")
+
+This was created using Seaborn with the full code shown here:
 
 ```python
     boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
@@ -405,7 +409,13 @@ ___
 
 ### 4.4 Violinplots
 
+Violin Plots are an extension of Box Plots showing the range, median and distribution of the data, but the include the KDE to represent the shape and distriburion of the data.
+
+The image below represents the Violin Plots in the same way as the Box Plots, the KDe is shown with a basic representation of a box plot within.
+
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/violinPlots.png "Violin Plot")
+
+The same code for Box Plot was used substituting is Seaborn ```violinplot``` function. 
 
 ```python
     violinplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
