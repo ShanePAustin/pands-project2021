@@ -32,7 +32,7 @@
 * saves a histogram of each variable to png files
 
 ## 2 Introduction
-The Iris flower dataset was introduced by the British statistician and biologist Ronald Fisher in 1936 in his paper (“The Use of Multiple Measurements in Taxonomic Problems”) [3](https://digital.library.adelaide.edu.au/dspace/bitstream/2440/15227/1/138.pdf) It focused on how to differentiate Iris species based on the shape and structure of their flowers. The dataset was originally collected by the botanist Edgar Anderson at the Gaspé Peninsula, Canada. Ronald Fisher was regarded by some as the single most important figure in 20th century statistics, and this dataset has since become a typical test case for many statistical classification techniques in the areas of statistics and machine learning.
+The Iris flower dataset was introduced by the British statistician and biologist Ronald Fisher in 1936 in his paper (“The Use of Multiple Measurements in Taxonomic Problems”) [[3](https://digital.library.adelaide.edu.au/dspace/bitstream/2440/15227/1/138.pdf)] It focused on how to differentiate Iris species based on the shape and structure of their flowers. The dataset was originally collected by the botanist Edgar Anderson at the Gaspé Peninsula, Canada. Ronald Fisher was regarded by some as the single most important figure in 20th century statistics, and this dataset has since become a typical test case for many statistical classification techniques in the areas of statistics and machine learning.
 
 The data set consists of 50 samples from each three species of Iris:
 
@@ -495,6 +495,3 @@ ___
 
 22) https://seaborn.pydata.org/generated/seaborn.violinplot.html
 
-[23]: https://www.google.com/
-
-[23]
