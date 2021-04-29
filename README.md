@@ -40,7 +40,7 @@ The data set consists of 50 samples from each three species of Iris:
 |-----------|---------------|--------------|
 |![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_setosa.jpg "Iris Setosa")|![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_versicolor.jpg "Iris Versicolor")|![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Images/Iris_virginica.jpg "Iris Virginica")|
 
-The images above taken from wikipedia [2](https://en.wikipedia.org/wiki/Iris_flower_data_set) show the three subspecies of Iris 
+The images above taken from wikipedia [[2](https://en.wikipedia.org/wiki/Iris_flower_data_set)] show the three subspecies of Iris 
 
 ___
 
@@ -54,15 +54,15 @@ import numpy as np
 import seaborn as sns
 ```
 
-```csv``` CSV (Comma Seperated Values) is the most common import/export format for spreadsheets and databases. [8](https://docs.python.org/3/library/csv.html)
+```csv``` CSV (Comma Seperated Values) is the most common import/export format for spreadsheets and databases. [[8](https://docs.python.org/3/library/csv.html)]
 
-```pandas``` pandas is a Python package to simplify working with data structures. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. The two primary data structures of pandas are; Series (1-dimensional) and DataFrame (2-dimensional) [9](https://pypi.org/project/pandas/)
+```pandas``` pandas is a Python package to simplify working with data structures. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. The two primary data structures of pandas are; Series (1-dimensional) and DataFrame (2-dimensional) [[9](https://pypi.org/project/pandas/)]
 
-```matplotlib``` matplotlib is a popular visualization tool and essentially a plotting library for Python and was developed to emulate MATLAB and uses pylab to do this. [10](https://realpython.com/python-matplotlib-guide/)
+```matplotlib``` matplotlib is a popular visualization tool and essentially a plotting library for Python and was developed to emulate MATLAB and uses pylab to do this. [[10](https://realpython.com/python-matplotlib-guide/)]
 
-```numpy``` NumPy is an open-source numerical Python library. NumPy contains a multi-dimensional array and matrix data structures. It can be utilised to perform a number of mathematical operations on arrays such as trigonometric, statistical, and algebraic routines [11](https://www.w3schools.com/python/numpy/numpy_intro.asp)
+```numpy``` NumPy is an open-source numerical Python library. NumPy contains a multi-dimensional array and matrix data structures. It can be utilised to perform a number of mathematical operations on arrays such as trigonometric, statistical, and algebraic routines [[11](https://www.w3schools.com/python/numpy/numpy_intro.asp)]
 
-```seaborn``` Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics [12](https://seaborn.pydata.org/)
+```seaborn``` Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics [[12](https://seaborn.pydata.org/)]
 
 ___
 
@@ -249,7 +249,7 @@ max            7.90         3.80          6.90         2.50
 
 Correlation
 
-Finally a correlation ```corr()``` [14](https://realpython.com/numpy-scipy-pandas-correlation-python/) was performed on the data to assess the relationships between the variables. The closer to 1 the stronger the correlation exists between the two variables.
+Finally a correlation ```corr()``` [[14](https://realpython.com/numpy-scipy-pandas-correlation-python/)] was performed on the data to assess the relationships between the variables. The closer to 1 the stronger the correlation exists between the two variables.
 
 ```
 Data Correlation
@@ -261,7 +261,7 @@ Petal Length      0.871754    -0.420516      1.000000     0.962757
 Petal Width       0.817954    -0.356544      0.962757     1.000000
 ```
 
-The code shown utilised Seaborn to create a ```heatmap``` [15](https://seaborn.pydata.org/generated/seaborn.heatmap.html) of the table above, The darker the colour the stronger the correlation. This is the first example of the functionality of python to visualise data, which turns a table of numbers into an easily interpertable image.
+The code shown utilised Seaborn to create a ```heatmap``` [[15](https://seaborn.pydata.org/generated/seaborn.heatmap.html)] of the table above, The darker the colour the stronger the correlation. This is the first example of the functionality of python to visualise data, which turns a table of numbers into an easily interpertable image.
 
 ```python
     sns.heatmap(df.corr(),cmap="BuPu", annot=True)
@@ -303,7 +303,7 @@ ___
 
 ### 4.1 Histograms
 
-The first plot to perform is to visualise the distribution of each variable, the following four plots are Histograms [16](https://stackoverflow.com/questions/33203645/how-to-plot-a-histogram-using-matplotlib-in-python-with-a-list-of-data) of each variable divided into ten bins. 
+The first plot to perform is to visualise the distribution of each variable, the following four plots are Histograms [[16](https://stackoverflow.com/questions/33203645/how-to-plot-a-histogram-using-matplotlib-in-python-with-a-list-of-data)] of each variable divided into ten bins. 
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/SLHist.png "Sepal Length Histogram")
 
@@ -339,7 +339,7 @@ To check the assumptions of distrubution from the histograms, a stacked plot of 
 It is evident from this that the Setosa Petal Length and Width is easily distinguishable form the other species. The Iris Versicolor and Virginica are somewhat seperated form each other but not entirely distinguishable.
 The Sepal Length variable is still tightly packed with only the Setosa with significantly higher counts within it's range. Whereas Sepal Width does not seems to display any observable pattern.
 
-The code shown was written to create the stack histogram using Seaborn ```histplot``` [17](https://seaborn.pydata.org/generated/seaborn.histplot.html) [18](https://seaborn.pydata.org/tutorial/axis_grids.html):
+The code shown was written to create the stack histogram using Seaborn ```histplot``` [[17](https://seaborn.pydata.org/generated/seaborn.histplot.html)] [[18](https://seaborn.pydata.org/tutorial/axis_grids.html)]:
 
 ```python
     distplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
@@ -375,7 +375,7 @@ Setosa has the smallest petal values, again Versicolor has average petal length 
 
 There seems to be a positive correlation between the length and width of all the species, however there is a distinguishing strong correlation and relationship between petal length and petal width.
 
-The code shown is an example of the Scatterplot usins Seaborn ```FacetGrid```, ```scatter``` [19](https://seaborn.pydata.org/generated/seaborn.scatterplot.html) for Sepal Length - Sepal Width:
+The code shown is an example of the Scatterplot usins Seaborn ```FacetGrid```, ```scatter``` [[19](https://seaborn.pydata.org/generated/seaborn.scatterplot.html)] for Sepal Length - Sepal Width:
 
 ```python
     sns.FacetGrid(df,hue="Species", palette="BuPu_r", height=5).map(plt.scatter, "Sepal Length", "Sepal Width" ).add_legend()
@@ -389,7 +389,7 @@ Pair plot can neatly represent all the above plots into one frame, the scatter p
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/scatterPlot.png "Pair Plot")
 
-This comprehensive plot is simply generated utilising Seaborn's ```pairplot``` [20](https://seaborn.pydata.org/generated/seaborn.pairplot.html), shown below:
+This comprehensive plot is simply generated utilising Seaborn's ```pairplot``` [[20](https://seaborn.pydata.org/generated/seaborn.pairplot.html)], shown below:
 
 ```python
 sns.pairplot(df,hue="Species", palette="BuPu_r", height=3)
@@ -405,7 +405,7 @@ The image belwo shows the boxplots of the three individual species of Iris split
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/boxPlots.png "Box Plot")
 
-This was created using Seaborn ```boxplot``` [21](https://pythonbasics.org/seaborn-boxplot/) with the full code shown here:
+This was created using Seaborn ```boxplot``` [[21](https://pythonbasics.org/seaborn-boxplot/)] with the full code shown here:
 
 ```python
     boxPlot, axes = plt.subplots(1,4, figsize=(16,8))
@@ -426,7 +426,7 @@ The image below represents the Violin Plots in the same way as the Box Plots, th
 
 ![alt text](https://github.com/ShanePAustin/pands-project2021/blob/main/Plots/violinPlots.png "Violin Plot")
 
-The same code for Box Plot was used substituting is Seaborn ```violinplot``` [22](https://seaborn.pydata.org/generated/seaborn.violinplot.html) function. 
+The same code for Box Plot was used substituting is Seaborn ```violinplot``` [[22](https://seaborn.pydata.org/generated/seaborn.violinplot.html)] function. 
 
 ```python
     violinplot, axes = plt.subplots(2,2, figsize=(10,10), sharex=False)
