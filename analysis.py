@@ -184,7 +184,7 @@ def heatMap():
 
 #dataSummary()
 #histograms()
-scatterPlots()
+#scatterPlots()
 #distPlot()
 #boxPlots()
 #violinPlots()

@@ -108,7 +108,7 @@ df = pd.read_csv(filename, header = None, names = ["Sepal Length", "Sepal Width"
 
 #### 3.1.1 Data Integrity
 
-With the data imported a summary was performed to assess the data integrity and discern the overall structure. To test data integrity three tests were performed to check for missing fields and data consistency [13](https://machinelearningknowledge.ai/pandas-tutorial-describe-head-unique-and-count/). The tests performed were: 
+With the data imported a summary was performed to assess the data integrity and discern the overall structure. To test data integrity three tests were performed to check for missing fields and data consistency [[13](https://machinelearningknowledge.ai/pandas-tutorial-describe-head-unique-and-count/)]. The tests performed were: 
 
 1. ```shape``` - This is a utility of NumPy to return the number of attributes and the length of each attribute.
 2. ```count``` - This expands on shape and shows the length of each attribute to check if no data is missing
@@ -440,6 +440,12 @@ The same code for Box Plot was used substituting is Seaborn ```violinplot``` [[2
 ___
 
 ## 5 Conclusions
+
+By utilising Pythons data analysis and visualisation functionality a fairly comprehensive investigation into datasets can be performed. Python allows and user to create highly customisable and concise visualisation of even the most complex datasets.
+
+Extra utilities of Python such as Pandas, NumPy, Matplotlib, Seaborn can make this analysis even easier. An example of this power and simplicity can be seen with Seaborn's ```pairplot``` a line of code as short as ```sns.pairplot(df,hue="Species")``` produces 16 extremely informative plots and can visualise a whole dataset in one output. 
+
+The analysis of the Iris dataset reveals patterns and characteristics of the define variables and between the three subspecies of Iris. With these identified patterns it will be possible to devle into the realm of Machine Learning to derive algoithms to assess and predict which subspecies an flower belongs to, based on the given measurements. This type unspuervised learning can provide extremely powerful data analysis and prediciton models to many fields of research and business. Examples of such are medical diagnosis, speech and image recognition, consumer behaviour and finance models. 
 
 ___
 
